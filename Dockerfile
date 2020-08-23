@@ -82,11 +82,12 @@ WORKDIR /tmp/
 RUN wget -c https://mirrors.163.com/mysql/Downloads/MySQL-5.7/mysql-community-common-5.7.31-1.el6.x86_64.rpm
 RUN wget -c https://mirrors.163.com/mysql/Downloads/MySQL-5.7/mysql-community-libs-5.7.31-1.el6.x86_64.rpm
 RUN wget -c https://mirrors.163.com/mysql/Downloads/MySQL-5.7/mysql-community-libs-compat-5.7.31-1.el6.x86_64.rpm
-RUN wget -c https://mirrors.163.com/mysql/Downloads/MySQL-5.7/mysql-community-client-5.7.31-1.el6.i686.rpm
+RUN wget -c https://mirrors.163.com/mysql/Downloads/MySQL-5.7/mysql-community-client-5.7.31-1.el6.x86_64.rpm
 RUN wget -c https://mirrors.163.com/mysql/Downloads/MySQL-5.7/mysql-community-devel-5.7.31-1.el6.x86_64.rpm
 RUN wget -c https://mirrors.163.com/mysql/Downloads/MySQL-5.7/mysql-community-server-5.7.31-1.el6.x86_64.rpm
 
 # 卸载已经安装的MySQL组件
+WORKDIR /root/
 RUN yum remove -y mysql-*
 
 # 安装MySQL
