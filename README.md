@@ -17,7 +17,7 @@
 ### 构建镜像
 
     cd docker-centos6-php52
-    sudo docker build -t fifilyu/centos6-php52:v1 .
+    sudo docker build -t fifilyu/centos6-php52:latest .
 
 ## 1. 环境组件列表
 
@@ -48,7 +48,7 @@ MySQL、Redis的客户端工具可以连接容器内的服务端口，这样可�
         --network=fifilyu \
         -e MYSQL_ROOT_PASSWORD=wdtech \
         -v /some/content:/data/web/default:ro \
-        --name some-centos6-php52 fifilyu/centos6-php52:v1
+        --name some-centos6-php52 fifilyu/centos6-php52:latest
 
 将本地目录 `/some/content` 挂载到容器的 `/data/web/default` 目录。
 
@@ -73,7 +73,7 @@ MySQL、Redis的客户端工具可以连接容器内的服务端口，这样可�
     docker run -d \
         --network=fifilyu \
         -e MYSQL_ROOT_PASSWORD=wdtech \
-        --name some-centos6-php52 fifilyu/centos6-php52:v1
+        --name some-centos6-php52 fifilyu/centos6-php52:latest
 
 此时访问 http://容器IP 能看到 PHP 版本信息。
 
@@ -85,7 +85,7 @@ MySQL、Redis的客户端工具可以连接容器内的服务端口，这样可�
         --network=fifilyu \
         -e MYSQL_ROOT_PASSWORD=wdtech \
         -e PUBLIC_STR="$(</home/fifilyu/.ssh/root@fifilyu.pub)" \
-        --name some-centos6-php52 fifilyu/centos6-php52:v1
+        --name some-centos6-php52 fifilyu/centos6-php52:latest
 
 效果同上。另外，可以通过SSH无密码登录容器。
 
@@ -101,7 +101,7 @@ MySQL、Redis的客户端工具可以连接容器内的服务端口，这样可�
         --network=fifilyu \
         -e MYSQL_ROOT_PASSWORD=wdtech \
         -p 80:8080 \
-        --name some-centos6-php52 fifilyu/centos6-php52:v1
+        --name some-centos6-php52 fifilyu/centos6-php52:latest
 
 此时访问 http://localhost:8080 能看到 PHP 版本信息。
 
