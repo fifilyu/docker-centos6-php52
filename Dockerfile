@@ -43,7 +43,7 @@ RUN sed -i "s/#ClientAliveCountMax 3/ClientAliveCountMax 10/" /etc/ssh/sshd_conf
 ####################
 COPY pkg/bin/php-5.2.17_el6.x86_64.tar.gz /tmp
 RUN tar xf /tmp/php-5.2.17_el6.x86_64.tar.gz -C /usr/local
-RUN yum install -y libmcrypt freetype mhash mysql-libs libtool-ltdl libpng gd libjpeg-turbo
+RUN yum install -y libmcrypt freetype mhash libtool-ltdl libpng gd libjpeg-turbo
 COPY file/etc/init.d/php-fpm /etc/init.d/php-fpm
 
 # 创建用户
