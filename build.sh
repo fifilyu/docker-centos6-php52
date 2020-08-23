@@ -1,1 +1,1 @@
-docker build -t fifilyu/centos6-php52:v1 .
+docker build -t fifilyu/docker-centos6-php52:v1 .
