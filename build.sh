@@ -1,0 +1,1 @@
+docker build -t fifilyu/centos6-php52:v1 .
