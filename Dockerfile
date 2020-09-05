@@ -20,13 +20,16 @@ COPY file/etc/yum.repos.d/epel.repo /etc/yum.repos.d/epel.repo
 
 RUN yum update -y
 
-RUN yum -y install telnet openssl-devel iproute vim-enhanced chrony wget curl screen sudo rsync tcpdump strace openssh-server openssh-clients
+RUN yum -y install telnet openssl-devel iproute vim-enhanced wget curl screen sudo rsync tcpdump strace openssh-server openssh-clients
 
 RUN echo set fencs=utf-8,gbk >>/etc/vimrc
 
 # 关闭SELINUX
 RUN echo SELINUX=disabled>/etc/selinux/config
 RUN echo SELINUXTYPE=targeted>>/etc/selinux/config
+
+# 设定系统时区
+RUN yes|cp /usr/share/zoneinfo/Asia/Chongqing /etc/localtime
 
 # 配置SSH服务
 RUN echo "*               soft   nofile            65535" >> /etc/security/limits.conf
