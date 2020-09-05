@@ -70,6 +70,8 @@ MySQL、Redis的客户端工具可以连接容器内的服务端口，这样可�
 ### 3.1 启动一个容器很简单
 
     docker run -d \
+        --env LANG=en_US.UTF-8 \
+	    --env TZ=Asia/Shanghai \
         -e MYSQL_ROOT_PASSWORD=wdtech \
         --name some-centos6-php52 fifilyu/docker-centos6-php52:latest
 
@@ -80,6 +82,8 @@ MySQL、Redis的客户端工具可以连接容器内的服务端口，这样可�
 ### 3.2 启动带公钥的容器
 
     docker run -d \
+        --env LANG=en_US.UTF-8 \
+	    --env TZ=Asia/Shanghai \
         -e MYSQL_ROOT_PASSWORD=wdtech \
         -e PUBLIC_STR="$(</home/fifilyu/.ssh/root@fifilyu.pub)" \
         --name some-centos6-php52 fifilyu/docker-centos6-php52:latest
@@ -95,6 +99,8 @@ MySQL、Redis的客户端工具可以连接容器内的服务端口，这样可�
 ### 3.3 启动容器时暴露端口
 
     docker run -d \
+        --env LANG=en_US.UTF-8 \
+	    --env TZ=Asia/Shanghai \
         -e MYSQL_ROOT_PASSWORD=wdtech \
         -p 8080:80 \
         --name some-centos6-php52 fifilyu/docker-centos6-php52:latest
@@ -104,6 +110,8 @@ MySQL、Redis的客户端工具可以连接容器内的服务端口，这样可�
 更复杂的容器端口映射：
 
     docker run -d \
+        --env LANG=en_US.UTF-8 \
+	    --env TZ=Asia/Shanghai \
         -e MYSQL_ROOT_PASSWORD=wdtech \
         -p 8022:22 \
         -p 8080:80 \
