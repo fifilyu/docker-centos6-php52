@@ -28,9 +28,6 @@ RUN echo set fencs=utf-8,gbk >>/etc/vimrc
 RUN echo SELINUX=disabled>/etc/selinux/config
 RUN echo SELINUXTYPE=targeted>>/etc/selinux/config
 
-# 设定系统时区
-RUN yes|cp /usr/share/zoneinfo/Asia/Chongqing /etc/localtime
-
 # 配置SSH服务
 RUN echo "*               soft   nofile            65535" >> /etc/security/limits.conf
 RUN echo "*               hard   nofile            65535" >> /etc/security/limits.conf
