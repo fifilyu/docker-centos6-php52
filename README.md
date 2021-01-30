@@ -225,6 +225,10 @@ Session目录:
 * xmlrpc
 * xml
 * Zend Optimizer
+* iconv
+* zip
+* openssl
+* gettext
 
 #### 4.3.2 默认禁用
 * calendar
